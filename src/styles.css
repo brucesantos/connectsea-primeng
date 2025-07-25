@@ -1,1 +1,30 @@
+/* Importar a fonte Inter do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
+
+/* CSS layer setup for better specificity control */
+@layer reset, primeng, app-styles;
+
+/* Base font size for consistent scaling */
+html {
+  font-size: 16px;
+}
+
+/* Global styles that work with PrimeNG */
+body {
+  margin: 0;
+  font-family: 'Inter', var(--font-family);
+}
+
+/* Definir Inter como fonte padrão para todo o sistema */
+:root {
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Optional: Reset styles in their own layer */
+@layer reset {
+  * {
+    box-sizing: border-box;
+  }
+}

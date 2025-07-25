@@ -1,59 +1,124 @@
-# ConnectseaPrimeng
+# PDA Dashboard - Apollo NG
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+Uma aplicação Angular moderna para gerenciamento de Proforma Disbursement Accounts (PDAs) usando componentes do PrimeNG.
 
-## Development server
+## 🚀 Funcionalidades
 
-To start a local development server, run:
+- **Dashboard Responsivo**: Interface moderna com sidebar de navegação
+- **Tabela de Dados**: Exibição de PDAs com paginação e busca
+- **Navegação Intuitiva**: Menu lateral organizado por categorias
+- **Ações em Tempo Real**: Botões para editar, excluir, download, upload
+- **Design Moderno**: Interface limpa e profissional
 
-```bash
-ng serve
+## 📋 Estrutura do Projeto
+
+```
+src/app/
+├── pda-dashboard.component.ts    # Lógica do componente
+├── pda-dashboard.component.html  # Template HTML
+├── pda-dashboard.component.css   # Estilos CSS
+├── app.routes.ts                 # Configuração de rotas
+└── app.html                      # Template principal
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🛠️ Tecnologias Utilizadas
 
-## Code scaffolding
+- **Angular 17+**: Framework principal
+- **PrimeNG**: Componentes de UI
+- **TypeScript**: Linguagem de programação
+- **CSS3**: Estilização moderna
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🎨 Componentes PrimeNG Utilizados
 
-```bash
-ng generate component component-name
+- `p-table`: Tabela de dados com paginação
+- `p-button`: Botões de ação
+- `p-inputtext`: Campo de busca
+- `p-tag`: Tags de status
+- `p-tooltip`: Tooltips informativos
+
+## 🚀 Como Executar
+
+1. **Instalar dependências**:
+   ```bash
+   npm install
+   ```
+
+2. **Executar em modo de desenvolvimento**:
+   ```bash
+   npm start
+   ```
+
+3. **Acessar a aplicação**:
+   ```
+   http://localhost:4200
+   ```
+
+## 📱 Funcionalidades da Interface
+
+### Sidebar de Navegação
+- **Quotations**: Gerenciamento de cotações
+- **Proforma DAs**: Seção principal com PDAs ativos
+- **Disbursement Accounts**: Contas de desembolso
+
+### Header da Tabela
+- **Título**: "Table's Name"
+- **Busca**: Campo de pesquisa com filtro
+- **Ações**: Download, Upload, Grid View, New
+
+### Tabela de Dados
+- **Colunas**: Cod., Client, Vessel, Port, Cargo, Voyage, Call Status, PDA Status, Last Upd., Balance, Actions
+- **Paginação**: Controles de navegação
+- **Status Tags**: Indicadores visuais de status
+- **Ações**: Botões de editar e excluir
+
+## 🎯 Estrutura de Dados
+
+```typescript
+interface PDARecord {
+  cod: string;           // Código do PDA
+  client: string;        // Cliente
+  vessel: string;        // Navio
+  port: string;          // Porto
+  cargo: string;         // Carga
+  voyage: string;        // Viagem
+  callStatus: string;    // Status da chamada
+  pdaStatus: string;     // Status do PDA
+  lastUpdate: string;    // Última atualização
+  balance: string;       // Saldo
+}
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🔧 Personalização
 
-```bash
-ng generate --help
-```
+### Cores
+O projeto usa um esquema de cores moderno baseado em:
+- **Primária**: `#4f46e5` (Indigo)
+- **Secundária**: `#7c3aed` (Purple)
+- **Neutra**: Tons de cinza
 
-## Building
+### Responsividade
+A interface é totalmente responsiva e se adapta a:
+- **Desktop**: Layout completo com sidebar
+- **Tablet**: Sidebar compacta
+- **Mobile**: Layout vertical
 
-To build the project run:
+## 📝 Próximos Passos
 
-```bash
-ng build
-```
+- [ ] Implementar funcionalidade de busca
+- [ ] Adicionar filtros avançados
+- [ ] Integração com backend
+- [ ] Autenticação de usuários
+- [ ] Exportação de dados
+- [ ] Notificações em tempo real
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 🤝 Contribuição
 
-## Running unit tests
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📄 Licença
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.

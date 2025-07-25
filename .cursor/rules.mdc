@@ -1,0 +1,40 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+Aqui estão as regras do projeto para garantir que o foco seja sempre apenas no front-end, sem preocupação com funcionalidades de back-end. Essas regras servem para orientar o desenvolvimento como um guia de design de interface, priorizando a apresentação visual e a experiência do usuário.
+
+---
+
+# Regras do Projeto: Guia de Design de Interface (Front-End Only)
+
+## 1. **Foco Exclusivo no Front-End**
+- **Nunca implemente funcionalidades de back-end.**
+- **Não se preocupe com integrações reais, APIs ou lógica de negócio.**
+- **Todas as telas, componentes e fluxos devem ser mockados ou estáticos.**
+- **O objetivo é servir como referência visual e de experiência para o produto.**
+
+## 2. **Componentização e Reutilização**
+- Crie componentes reutilizáveis para todos os elementos visuais (botões, inputs, cards, etc.).
+- Utilize a pasta `components/` para organizar os componentes por domínio ou funcionalidade visual.
+- Este projeto usa: 
+    - angular
+    - primeNG
+- Siga as melhores práticas do framework.
+
+## 3. **Mock de Dados**
+- Use dados estáticos ou mocks para listas, tabelas, cards e qualquer conteúdo dinâmico.
+- Não implemente chamadas reais a serviços externos.
+- Se necessário, crie arquivos de mock para simular respostas.
+
+## 4. **Navegação e Rotas**
+- Implemente navegação entre páginas normalmente, mas sem dependências de autenticação real ou permissões.
+- Todas as rotas devem ser acessíveis sem restrições.
+
+## 5. **Sem Preocupação com Segurança**
+- Não implemente validações de segurança, autenticação ou autorização.
+- Qualquer validação deve ser apenas visual (ex: mostrar erro se campo estiver vazio).
+
+## 6. **Entrega e Demonstração**
+- O projeto deve ser facilmente navegável para demonstração visual.

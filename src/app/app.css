@@ -1,0 +1,100 @@
+/* App-specific styles that work with PrimeNG design tokens */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.app-header p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.app-main {
+  flex: 1;
+}
+
+.demo-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: 8px;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+}
+
+.demo-section h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  border-top: 1px solid var(--surface-border);
+}
+
+.app-footer p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* Dark mode toggle specific styles */
+.dark-mode-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--surface-hover);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+/* Dark mode indicator styles */
+.app-header p:last-child {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+  
+  .demo-section {
+    padding: 1rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .button-group p-button {
+    width: 100%;
+  }
+}
