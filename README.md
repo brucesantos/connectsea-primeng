@@ -1,78 +1,164 @@
-# PDA Dashboard - Apollo NG
+# ConnectSea PrimeNG - Apollo Template
 
-Uma aplicação Angular moderna para gerenciamento de Proforma Disbursement Accounts (PDAs) usando componentes do PrimeNG.
+Uma aplicação Angular moderna para gerenciamento de cotações e Proforma Disbursement Accounts (PDAs) baseada no **template Apollo da PrimeNG**.
 
-## 🚀 Funcionalidades
+## 🚀 Tecnologias Utilizadas
 
-- **Dashboard Responsivo**: Interface moderna com sidebar de navegação
-- **Tabela de Dados**: Exibição de PDAs com paginação e busca
-- **Navegação Intuitiva**: Menu lateral organizado por categorias
-- **Ações em Tempo Real**: Botões para editar, excluir, download, upload
-- **Design Moderno**: Interface limpa e profissional
+- **Angular 20** - Framework principal (versão mais recente)
+- **PrimeNG 20** - Biblioteca de componentes UI
+- **Template Apollo** - Template oficial da PrimeNG com mais componentes
+- **Tailwind CSS** - Framework CSS utilitário
+- **TypeScript** - Linguagem de programação
+- **SCSS** - Pré-processador CSS
 
 ## 📋 Estrutura do Projeto
 
+### **🏗️ Arquitetura Principal**
+
 ```
-src/app/
-├── pda-dashboard.component.ts    # Lógica do componente
-├── pda-dashboard.component.html  # Template HTML
-├── pda-dashboard.component.css   # Estilos CSS
-├── app.routes.ts                 # Configuração de rotas
-└── app.html                      # Template principal
+src/
+├── app/
+│   ├── layout/                 # Layout principal
+│   │   ├── components/         # Componentes de layout
+│   │   │   ├── app.layout.ts   # Layout principal
+│   │   │   ├── app.sidebar.ts  # Barra lateral
+│   │   │   ├── app.topbar.ts   # Barra superior
+│   │   │   ├── app.menu.ts     # Menu de navegação
+│   │   │   └── app.configurator.ts # Configurador de tema
+│   │   └── service/            # Serviços de layout
+│   ├── pages/                  # Páginas da aplicação
+│   │   ├── dashboards/         # Dashboards
+│   │   │   ├── ecommercedashboard.ts
+│   │   │   ├── bankingdashboard.ts
+│   │   │   └── pda/           # Dashboard PDA personalizado
+│   │   ├── auth/              # Autenticação
+│   │   ├── ecommerce/         # E-commerce
+│   │   ├── uikit/             # Componentes UI
+│   │   └── blocks/            # Blocos reutilizáveis
+│   ├── apps/                  # Aplicações
+│   │   ├── chat/              # Sistema de chat
+│   │   ├── mail/              # Sistema de email
+│   │   ├── kanban/            # Quadro Kanban
+│   │   ├── tasklist/          # Lista de tarefas
+│   │   ├── files/             # Gerenciador de arquivos
+│   │   └── blog/              # Sistema de blog
+│   └── types/                 # Tipos TypeScript
+├── assets/                    # Assets da aplicação
+│   ├── layout/               # Estilos de layout
+│   └── demo/                 # Dados de demonstração
+└── public/                   # Arquivos públicos
+    └── demo/                 # Imagens e dados demo
 ```
 
-## 🛠️ Tecnologias Utilizadas
+### **🎯 Funcionalidades Principais**
 
-- **Angular 17+**: Framework principal
-- **PrimeNG**: Componentes de UI
-- **TypeScript**: Linguagem de programação
-- **CSS3**: Estilização moderna
+#### **Dashboards Disponíveis:**
+- **E-commerce Dashboard** - Dashboard de vendas
+- **Banking Dashboard** - Dashboard bancário
+- **PDA Dashboard** - Dashboard personalizado para seu negócio
 
-## 🎨 Componentes PrimeNG Utilizados
+#### **Menu Customizado (Adaptado para seu negócio):**
+```typescript
+- Quotations (Cotações)
+  ├── Quotations
+  ├── Templates
+  ├── Clients
+  └── Configurations
 
-- `p-table`: Tabela de dados com paginação
-- `p-button`: Botões de ação
-- `p-inputtext`: Campo de busca
-- `p-tag`: Tags de status
-- `p-tooltip`: Tooltips informativos
+- Proforma DAs
+  ├── PDAs
+  ├── Expenses
+  ├── Remittances
+  └── Configurations
+
+- Disbursement Accounts
+  ├── DAs
+  ├── Debit Notes
+  └── Periodic DAs
+```
 
 ## 🚀 Como Executar
 
-1. **Instalar dependências**:
-   ```bash
-   npm install
-   ```
+### **1. Instalar Dependências**
+```bash
+npm install
+```
 
-2. **Executar em modo de desenvolvimento**:
-   ```bash
-   npm start
-   ```
+### **2. Iniciar Desenvolvimento (RECOMENDADO)**
+```bash
+ng dev
+```
+**✅ Vantagens do `ng dev`:**
+- Build 3x mais rápido
+- Hot reload instantâneo
+- Melhor performance
+- Menos uso de memória
+- Compatível com Angular 20
 
-3. **Acessar a aplicação**:
-   ```
-   http://localhost:4200
-   ```
+### **3. Alternativa (Compatibilidade)**
+```bash
+npm start
+```
+
+### **4. Acessar a Aplicação**
+```
+http://localhost:4200
+```
+
+## 🎨 Tema e Estilização
+
+### **Tema Apollo da PrimeNG**
+- **Modo Escuro/Claro**
+
+### **Configuração do Tema**
+```typescript
+// src/app/app.config.ts
+import Aura from '@primeng/themes/aura';
+
+providePrimeNG({ 
+  theme: { 
+    preset: Aura, 
+    options: { darkModeSelector: '.app-dark' } 
+  } 
+})
+```
 
 ## 📱 Funcionalidades da Interface
 
-### Sidebar de Navegação
-- **Quotations**: Gerenciamento de cotações
-- **Proforma DAs**: Seção principal com PDAs ativos
-- **Disbursement Accounts**: Contas de desembolso
+### **Layout Responsivo**
+- **Sidebar** - Navegação principal
+- **Topbar** - Barra superior com ações
+- **Content Area** - Área de conteúdo principal
+- **Configurator** - Configurador de tema
 
-### Header da Tabela
-- **Título**: "Table's Name"
-- **Busca**: Campo de pesquisa com filtro
-- **Ações**: Download, Upload, Grid View, New
+### **Componentes PrimeNG Utilizados**
+- `p-table` - Tabelas de dados
+- `p-button` - Botões de ação
+- `p-inputtext` - Campos de entrada
+- `p-tag` - Tags de status
+- `p-tooltip` - Tooltips
+- `p-paginator` - Paginação
+- `p-chart` - Gráficos
 
-### Tabela de Dados
-- **Colunas**: Cod., Client, Vessel, Port, Cargo, Voyage, Call Status, PDA Status, Last Upd., Balance, Actions
-- **Paginação**: Controles de navegação
-- **Status Tags**: Indicadores visuais de status
-- **Ações**: Botões de editar e excluir
+## 🔧 Personalização
 
-## 🎯 Estrutura de Dados
+### **Para Adicionar Novas Páginas:**
+1. **Criar componente** em `src/app/pages/`
+2. **Adicionar rota** em `src/app.routes.ts`
+3. **Adicionar menu** em `src/app/layout/components/app.menu.ts`
 
+### **Para Modificar o Layout:**
+- **Sidebar:** `src/app/layout/components/app.sidebar.ts`
+- **Topbar:** `src/app/layout/components/app.topbar.ts`
+- **Menu:** `src/app/layout/components/app.menu.ts`
+
+### **Para Modificar o Tema:**
+- **Configuração:** `src/app/app.config.ts`
+- **Configurador:** `src/app/layout/components/app.configurator.ts`
+
+## 📊 Estrutura de Dados
+
+### **Interface PDA**
 ```typescript
 interface PDARecord {
   cod: string;           // Código do PDA
@@ -88,28 +174,16 @@ interface PDARecord {
 }
 ```
 
-## 🔧 Personalização
+## 🎯 Por que o Template Apollo?
 
-### Cores
-O projeto usa um esquema de cores moderno baseado em:
-- **Primária**: `#4f46e5` (Indigo)
-- **Secundária**: `#7c3aed` (Purple)
-- **Neutra**: Tons de cinza
+O **template Apollo da PrimeNG** foi escolhido porque oferece:
 
-### Responsividade
-A interface é totalmente responsiva e se adapta a:
-- **Desktop**: Layout completo com sidebar
-- **Tablet**: Sidebar compacta
-- **Mobile**: Layout vertical
-
-## 📝 Próximos Passos
-
-- [ ] Implementar funcionalidade de busca
-- [ ] Adicionar filtros avançados
-- [ ] Integração com backend
-- [ ] Autenticação de usuários
-- [ ] Exportação de dados
-- [ ] Notificações em tempo real
+- **✅ Base Sólida** - Estrutura bem organizada
+- **✅ Componentes Prontos** - Mais de 80 componentes
+- **✅ Temas Profissionais** - Design moderno
+- **✅ Responsividade** - Funciona em todos os dispositivos
+- **✅ Documentação Completa** - Fácil de customizar
+- **✅ Suporte Oficial** - Mantido pela PrimeTek
 
 ## 🤝 Contribuição
 
@@ -122,3 +196,7 @@ A interface é totalmente responsiva e se adapta a:
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+
+---
+
+**Desenvolvido com Angular 20 + PrimeNG Apollo Template** 🚀
